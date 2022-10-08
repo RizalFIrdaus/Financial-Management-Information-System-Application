@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Profit extends Model
+{
+    use HasFactory;
+    protected $table = "profit";
+
+    public function pesan()
+    {
+        return $this->belongsTo(Pesan::class, 'nomor_po', 'nomor_po');
+    }
+}
